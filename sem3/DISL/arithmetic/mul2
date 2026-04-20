@@ -1,0 +1,142 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0135E5C8 .scope module, "mul2_tb" "mul2_tb" 2 3;
+ .timescale -9 -9;
+RS_011D416C .resolv tri, L_011D13D8, L_011F98F0, L_011F99F8, L_011F99A0;
+v011D12D0_0 .net8 "p", 3 0, RS_011D416C; 4 drivers
+v011D1328_0 .var "x", 1 0;
+v011D1380_0 .var "y", 1 0;
+S_0135DEE0 .scope module, "ex1" "mul2" 2 7, 3 1, S_0135E5C8;
+ .timescale -9 -9;
+L_0135CB18 .functor AND 1, L_011F97E8, L_011F9A50, C4<1>, C4<1>;
+L_0135C9C8 .functor AND 1, L_011F9840, L_011F9B00, C4<1>, C4<1>;
+L_0135CB50 .functor AND 1, L_011F9AA8, L_011F9B58, C4<1>, C4<1>;
+L_0135CCD8 .functor AND 1, L_011F9948, L_011F9BB0, C4<1>, C4<1>;
+L_011FA598 .functor BUFZ 1, L_011FA988, C4<0>, C4<0>, C4<0>;
+v011D0FB8_0 .net *"_s11", 0 0, L_011F9B00; 1 drivers
+v011D0E00_0 .net *"_s15", 0 0, L_011F9AA8; 1 drivers
+v011D1220_0 .net *"_s17", 0 0, L_011F9B58; 1 drivers
+v011D1010_0 .net *"_s21", 0 0, L_011F9948; 1 drivers
+v011D1430_0 .net *"_s23", 0 0, L_011F9BB0; 1 drivers
+v011D11C8_0 .net *"_s3", 0 0, L_011F97E8; 1 drivers
+v011D0CF8_0 .net *"_s33", 0 0, L_011FA598; 1 drivers
+v011D0EB0_0 .net *"_s5", 0 0, L_011F9A50; 1 drivers
+v011D0F60_0 .net *"_s6", 0 0, L_0135CB18; 1 drivers
+v011D0D50_0 .net *"_s9", 0 0, L_011F9840; 1 drivers
+v011D0E58_0 .net "a1", 0 0, L_0135C9C8; 1 drivers
+v011D1278_0 .net "a2", 0 0, L_0135CB50; 1 drivers
+v011D1068_0 .net "a3", 0 0, L_0135CCD8; 1 drivers
+v011D0DA8_0 .net "c0", 0 0, L_011FA790; 1 drivers
+v011D0F08_0 .net "c1", 0 0, L_011FA988; 1 drivers
+v011D10C0_0 .alias "p", 3 0, v011D12D0_0;
+v011D1170_0 .net "x", 1 0, v011D1328_0; 1 drivers
+v011D1118_0 .net "y", 1 0, v011D1380_0; 1 drivers
+L_011D13D8 .part/pv L_0135CB18, 0, 1, 4;
+L_011F97E8 .part v011D1328_0, 0, 1;
+L_011F9A50 .part v011D1380_0, 0, 1;
+L_011F9840 .part v011D1328_0, 1, 1;
+L_011F9B00 .part v011D1380_0, 0, 1;
+L_011F9AA8 .part v011D1328_0, 0, 1;
+L_011F9B58 .part v011D1380_0, 1, 1;
+L_011F9948 .part v011D1328_0, 1, 1;
+L_011F9BB0 .part v011D1380_0, 1, 1;
+L_011F98F0 .part/pv L_011FA4F0, 1, 1, 4;
+L_011F99F8 .part/pv L_011FA560, 2, 1, 4;
+L_011F99A0 .part/pv L_011FA598, 3, 1, 4;
+S_0135DDD0 .scope module, "h1" "half" 3 10, 3 17, S_0135DEE0;
+ .timescale -9 -9;
+L_011FA4F0 .functor XOR 1, L_0135C9C8, L_0135CB50, C4<0>, C4<0>;
+L_011FA790 .functor AND 1, L_0135C9C8, L_0135CB50, C4<1>, C4<1>;
+v013586A0_0 .alias "cout", 0 0, v011D0DA8_0;
+v011D2DA0_0 .net "s", 0 0, L_011FA4F0; 1 drivers
+v011D2DF8_0 .alias "x", 0 0, v011D0E58_0;
+v011D2E50_0 .alias "y", 0 0, v011D1278_0;
+S_0135E6D8 .scope module, "h2" "half" 3 11, 3 17, S_0135DEE0;
+ .timescale -9 -9;
+L_011FA560 .functor XOR 1, L_011FA790, L_0135CCD8, C4<0>, C4<0>;
+L_011FA988 .functor AND 1, L_011FA790, L_0135CCD8, C4<1>, C4<1>;
+v0135ABD8_0 .alias "cout", 0 0, v011D0F08_0;
+v0135AC30_0 .net "s", 0 0, L_011FA560; 1 drivers
+v013585F0_0 .alias "x", 0 0, v011D0DA8_0;
+v01358648_0 .alias "y", 0 0, v011D1068_0;
+    .scope S_0135E5C8;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "mul2_tb.vcd";
+    %vpi_call 2 11 "$dumpvars", 1'sb0, S_0135E5C8;
+    %set/v v011D1328_0, 0, 2;
+    %set/v v011D1380_0, 0, 2;
+    %delay 20, 0;
+    %set/v v011D1328_0, 0, 2;
+    %movi 8, 1, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %set/v v011D1328_0, 0, 2;
+    %movi 8, 2, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %set/v v011D1328_0, 0, 2;
+    %set/v v011D1380_0, 1, 2;
+    %delay 20, 0;
+    %movi 8, 1, 2;
+    %set/v v011D1328_0, 8, 2;
+    %set/v v011D1380_0, 0, 2;
+    %delay 20, 0;
+    %movi 8, 1, 2;
+    %set/v v011D1328_0, 8, 2;
+    %movi 8, 1, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %movi 8, 1, 2;
+    %set/v v011D1328_0, 8, 2;
+    %movi 8, 2, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %movi 8, 1, 2;
+    %set/v v011D1328_0, 8, 2;
+    %set/v v011D1380_0, 1, 2;
+    %delay 20, 0;
+    %movi 8, 2, 2;
+    %set/v v011D1328_0, 8, 2;
+    %set/v v011D1380_0, 0, 2;
+    %delay 20, 0;
+    %movi 8, 2, 2;
+    %set/v v011D1328_0, 8, 2;
+    %movi 8, 1, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %movi 8, 2, 2;
+    %set/v v011D1328_0, 8, 2;
+    %movi 8, 2, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %movi 8, 2, 2;
+    %set/v v011D1328_0, 8, 2;
+    %set/v v011D1380_0, 1, 2;
+    %delay 20, 0;
+    %set/v v011D1328_0, 1, 2;
+    %set/v v011D1380_0, 0, 2;
+    %delay 20, 0;
+    %set/v v011D1328_0, 1, 2;
+    %movi 8, 1, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %set/v v011D1328_0, 1, 2;
+    %movi 8, 2, 2;
+    %set/v v011D1380_0, 8, 2;
+    %delay 20, 0;
+    %set/v v011D1328_0, 1, 2;
+    %set/v v011D1380_0, 1, 2;
+    %delay 20, 0;
+    %vpi_call 2 44 "$display", "Test complete";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "mul2_tb.v";
+    "./mul2.v";

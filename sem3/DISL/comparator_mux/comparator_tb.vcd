@@ -1,0 +1,58 @@
+$date
+	Thu Aug 28 18:37:37 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module comparator_tb $end
+$var wire 1 ! eq $end
+$var wire 1 " gt $end
+$var wire 1 # lt $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$scope module ex1 $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 1 ! eq $end
+$var wire 1 " gt $end
+$var wire 1 ( i0 $end
+$var wire 1 ) i1 $end
+$var wire 1 * i2 $end
+$var wire 1 + i3 $end
+$var wire 1 # lt $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1+
+1*
+1)
+1(
+b0 '
+b0 &
+b0 %
+b0 $
+0#
+0"
+1!
+$end
+#20
+1#
+0!
+0*
+0(
+b101 %
+b101 '
+#40
+0#
+1"
+1(
+b1011 %
+b1011 '
+b1111 $
+b1111 &
+#60
